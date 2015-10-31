@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="bEV-Ua-mR3">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <scenes>
+        <!--自定义图片选择器-->
+        <scene sceneID="9Th-8g-88g">
+            <objects>
+                <collectionViewController id="2TG-hZ-Q0j" customClass="MyCollectionViewController" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="PmX-aT-LzZ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <collectionViewLayout key="collectionViewLayout" id="zAT-er-0Sh" customClass="CustomTransformCollecionLayout"/>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="X5d-4p-02i" customClass="ImageCollectionViewCell">
+                                <rect key="frame" x="0.0" y="0.0" width="92" height="93"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="92" height="93"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="3" translatesAutoresizingMaskIntoConstraints="NO" id="0CX-He-wTV">
+                                            <rect key="frame" x="5" y="5" width="82" height="83"/>
+                                        </imageView>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jQ9-Eo-jpN">
+                                            <rect key="frame" x="0.0" y="0.0" width="92" height="93"/>
+                                            <connections>
+                                                <action selector="tapCellButton:" destination="X5d-4p-02i" eventType="touchUpInside" id="iHn-ZX-ya3"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="0CX-He-wTV" secondAttribute="bottom" constant="5" id="9XL-zA-06k"/>
+                                    <constraint firstItem="0CX-He-wTV" firstAttribute="top" secondItem="X5d-4p-02i" secondAttribute="top" constant="5" id="F2j-km-sEY"/>
+                                    <constraint firstAttribute="bottom" secondItem="jQ9-Eo-jpN" secondAttribute="bottom" id="RNz-2F-RbS"/>
+                                    <constraint firstItem="jQ9-Eo-jpN" firstAttribute="leading" secondItem="X5d-4p-02i" secondAttribute="leading" id="Tni-Sl-yBs"/>
+                                    <constraint firstAttribute="trailing" secondItem="jQ9-Eo-jpN" secondAttribute="trailing" id="raI-Wb-mbe"/>
+                                    <constraint firstItem="0CX-He-wTV" firstAttribute="leading" secondItem="X5d-4p-02i" secondAttribute="leading" constant="5" id="tTz-sd-bES"/>
+                                    <constraint firstAttribute="trailing" secondItem="0CX-He-wTV" secondAttribute="trailing" constant="5" id="wdB-0f-5nz"/>
+                                    <constraint firstItem="jQ9-Eo-jpN" firstAttribute="top" secondItem="X5d-4p-02i" secondAttribute="top" id="x5m-5b-Ga5"/>
+                                </constraints>
+                                <size key="customSize" width="92" height="93"/>
+                                <connections>
+                                    <outlet property="cellImageView" destination="0CX-He-wTV" id="hQE-hy-vGL"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="2TG-hZ-Q0j" id="b9X-uk-xqT"/>
+                            <outlet property="delegate" destination="2TG-hZ-Q0j" id="oqY-3g-Bki"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" title="自定义图片选择器" id="VLS-cQ-JqI"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6uM-MZ-LLO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1029" y="135"/>
+        </scene>
+        <!--自定义图片选择器-->
+        <scene sceneID="QL9-Bk-hQc">
+            <objects>
+                <navigationController title="自定义图片选择器" automaticallyAdjustsScrollViewInsets="NO" id="bEV-Ua-mR3" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3rt-ar-XPe">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="2TG-hZ-Q0j" kind="relationship" relationship="rootViewController" id="NcK-ko-8Xu"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w9t-I2-GKx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="419" y="176"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="3" width="600" height="549"/>
+    </resources>
+</document>
